@@ -195,6 +195,17 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
      */
     public var sendNotifications: Bool = true
     
+    /**
+     Determines whether the user location annotation is moved from the raw user location reported by the device to the nearest location along the route.
+     
+     By default, this property is set to `true`, causing the user location annotation to be snapped to the route.
+     */
+    public var snapsUserLocationAnnotationToRoute = true {
+        didSet {
+            mapViewController?.snapsUserLocationAnnotationToRoute = snapsUserLocationAnnotationToRoute
+        }
+    }
+    
     var tableViewController: RouteTableViewController?
     var mapViewController: RouteMapViewController?
     
